@@ -83,7 +83,7 @@ Para los nuevos usuarios que se quiera añadir el comando a utilizar sería:
 
 ##### Arrancar el contenedor del registro:
 
-    `docker run -d -p 5000:5000 --name registry-apps  -v /storage-docker/runtime/docker-registry-v1:/registry -e "SETTINGS_FLAVOR=dev" -e "STORAGE_PATH=/registry" registry`
+    `docker run -d -p 5000 --name registry-apps  -v /storage-docker/runtime/docker-registry-v1:/registry -e "SETTINGS_FLAVOR=dev" -e "STORAGE_PATH=/registry" registry`
 
 ##### Arrancar el front sobre el registro:
 
@@ -107,7 +107,7 @@ Para los nuevos usuarios que se quiera añadir el comando a utilizar sería:
 ### Registro Docker de imagenes base 
 
 ##### Arrancar el contenedor del registro:
-    `docker run -d -p 5000:5000 --name registry-base -v /storage-docker/runtime/docker-registry-v1:/registry -e "SETTINGS_FLAVOR=dev" -e "STORAGE_PATH=/registry" registry:latest`
+    `docker run -d -p 5000 --name registry-base -v /storage-docker/runtime/docker-registry-v1:/registry -e "SETTINGS_FLAVOR=dev" -e "STORAGE_PATH=/registry" registry:latest`
 
 ##### Arrancar el front sobre el registro:
     `docker run -d -p 443:443 -v /opt/external/registry-v1/:/etc/nginx/external  --link registry-base:registry --name nginx-registrybase-proxy marvambass/nginx-registry-proxy`
